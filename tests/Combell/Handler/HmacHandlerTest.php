@@ -10,22 +10,28 @@ class HmacHandlerTest extends \PHPUnit_Framework_TestCase
     {
         $apiKey = 'xyz';
         $apiSecret = 'abc';
-        
+
         $hmacHandler = new HmacHandler($apiKey, $apiSecret);
         $request = new Request('get', '/');
         $nonce = uniqid();
         $time = time();
         $hmac = $this->invokeMethod($hmacHandler, 'sign', [$request, $nonce]);
 
+        $body = (string) $request->getBody()->getContents();
+
+        if ($body !== '') {
+            $body = base64_encode(md5($body, true));
+        }
+
         $valueToSign = $apiKey
             . strtolower($request->getMethod())
             . urlencode($request->getUri()->getPath())
             . $time
             . $nonce
-            . $request->getBody()->getContents();
+            . $body;
         $signedValue = hash_hmac('sha256', $valueToSign, $apiSecret, true);
         $signature = base64_encode($signedValue);
-        
+
         $this->assertEquals('hmac ' . $apiKey . ':' . $signature . ':' . $nonce . ':' . $time, $hmac);
     }
 

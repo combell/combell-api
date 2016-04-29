@@ -12,7 +12,7 @@ $client = new \Combell\Client(
 );
 
 // Get all domains you manage
-$response = $client->get('/v1/domains');
+$response = $client->get('/v1/hostingaccounts/identifier.be');
 
 // Dump response
 var_dump(

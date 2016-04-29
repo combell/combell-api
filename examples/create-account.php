@@ -11,8 +11,13 @@ $client = new \Combell\Client(
     ]
 );
 
-// Get all domains you manage
-$response = $client->get('/v1/domains');
+$body = new \stdClass();
+$body->servicepack_id = '0';
+$body->identifier = 'identifier.be';
+$body->password = 'password';
+
+// Create hosting account
+$response = $client->post('/v1/hostingaccounts', array('json' => $body));
 
 // Dump response
 var_dump(
