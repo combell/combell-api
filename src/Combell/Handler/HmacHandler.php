@@ -18,7 +18,13 @@ class HmacHandler
     {
         $time = time();
 
+        $path = (string) $request->getUri()->getPath();
+        $query = (string) $request->getUri()->getQuery();
         $body = (string) $request->getBody()->getContents();
+
+        if ($query !== '') {
+            $path .= '?' . $query;
+        }
 
         if ($body !== '') {
             $body = base64_encode(md5($body, true));
@@ -26,7 +32,7 @@ class HmacHandler
 
         $valueToSign = $this->apiKey
             . strtolower($request->getMethod())
-            . urlencode($request->getUri()->getPath())
+            . urlencode($path)
             . $time
             . $nonce
             . $body;

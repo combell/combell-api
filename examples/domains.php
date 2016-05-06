@@ -12,7 +12,12 @@ $client = new \Combell\Client(
 );
 
 // Get all domains you manage
-$response = $client->get('/v1/domains');
+$response = $client->get('/v1/domains', [
+    'query' => [
+        'skip' => 0,
+        'take' => 10
+    ]
+]);
 
 // Dump response
 var_dump(
