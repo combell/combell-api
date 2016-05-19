@@ -11,7 +11,7 @@ $client = new \Combell\Client(
     ]
 );
 
-// Get all domains you manage
+// Get detail of a hosting account
 $response = $client->get('/v1/hostingaccounts/identifier.be');
 
 // Dump response
