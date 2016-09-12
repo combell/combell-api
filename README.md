@@ -6,7 +6,7 @@ To learn more about the **Combell public API**, go to [https://api.combell.com/]
 
 [Combell](https://combell.com), your host on the internet.
 
-[![Build Status](https://travis-ci.org/Combell/combell-api.svg?branch=master)](https://travis-ci.org/Combell/combell-api)
+**Build status:** [![Build Status](https://travis-ci.org/Combell/combell-api.svg?branch=master)](https://travis-ci.org/Combell/combell-api)
 
 ## Example
 
