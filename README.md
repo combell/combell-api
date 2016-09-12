@@ -4,7 +4,7 @@ The Combell API project wraps around [Guzzle](http://docs.guzzlephp.org/en/lates
 
 To learn more about the Combell public API, go to [https://api.combell.com/](https://api.combell.com/).
 
-[Combell]https://combell.com, your host on the internet.
+[Combell](https://combell.com), your host on the internet.
 
 ## Example
 
@@ -38,4 +38,4 @@ var_dump(
 );
 ```
 
-Go to the [examples](../blob/master/examples) folder to see more examples.
+Go to the [examples](examples) folder to see more examples.
