@@ -47,8 +47,6 @@
 
     <target name="phpunit" description="Run PHPUnit tests">
         <exec executable="${basedir}/vendor/bin/phpunit" failonerror="true">
-            <arg value="-d" />
-            <arg value="memory_limit=512M" />
             <arg value="--coverage-clover" />
             <arg value="${basedir}/build/coverage/clover.xml" />
             <arg value="--coverage-html" />
