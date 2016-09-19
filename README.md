@@ -8,6 +8,13 @@ To learn more about the **Combell public API**, go to [https://api.combell.com/]
 
 **Build status:** [![Build Status](https://travis-ci.org/Combell/combell-api.svg?branch=master)](https://travis-ci.org/Combell/combell-api)
 
+## Install
+
+```
+composer require combell/combell-api
+```
+
+
 ## Example
 
 The code example below creates a new hosting account called **identifier.be** on our hosting environment.
