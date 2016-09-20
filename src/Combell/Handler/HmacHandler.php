@@ -20,7 +20,7 @@ class HmacHandler
 
         $path = (string) $request->getUri()->getPath();
         $query = (string) $request->getUri()->getQuery();
-        $body = (string) $request->getBody()->getContents();
+        $body = (string) $request->getBody();
 
         if ($query !== '') {
             $path .= '?' . $query;
