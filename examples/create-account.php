@@ -17,7 +17,7 @@ $body->identifier = 'identifier.be';
 $body->password = 'password';
 
 // Create hosting account
-$response = $client->post('/v1/hostingaccounts', array('json' => $body));
+$response = $client->post('/v1/hostingaccounts', ['json' => $body]);
 
 // Dump response
 var_dump(

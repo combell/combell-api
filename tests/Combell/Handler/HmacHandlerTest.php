@@ -35,7 +35,7 @@ class HmacHandlerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('hmac ' . $apiKey . ':' . $signature . ':' . $nonce . ':' . $time, $hmac);
     }
 
-    protected function invokeMethod(&$object, $methodName, array $parameters = array())
+    protected function invokeMethod(&$object, $methodName, array $parameters = [])
     {
         $reflection = new \ReflectionClass(get_class($object));
         $method = $reflection->getMethod($methodName);

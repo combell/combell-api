@@ -15,7 +15,7 @@ $body = new \stdClass();
 $body->domain_name = 'domain-name-to-register.eu';
 
 // Register domain name
-$response = $client->post('/v1/domains/registrations', array('json' => $body));
+$response = $client->post('/v1/domains/registrations', ['json' => $body]);
 
 // Dump response
 var_dump(
