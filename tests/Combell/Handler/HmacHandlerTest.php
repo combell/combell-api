@@ -3,8 +3,9 @@ namespace Combell\Tests\Handler;
 
 use Combell\Handler\HmacHandler;
 use GuzzleHttp\Psr7\Request;
+use PHPUnit\Framework\TestCase;
 
-class HmacHandlerTest extends \PHPUnit_Framework_TestCase
+class HmacHandlerTest extends TestCase
 {
     public function testSign()
     {
