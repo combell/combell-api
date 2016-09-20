@@ -1,12 +1,10 @@
-# Combell API
+# Combell public API
 
-The *Combell API project* wraps around [Guzzle](http://docs.guzzlephp.org/en/latest/) and offers *HMAC authentication*. You can use the client to easily connect to the Combell public API endpoint.
+The *Combell public API project* wraps around [Guzzle](http://docs.guzzlephp.org/en/latest/) and offers *HMAC authentication*. You can use the client to easily connect to the Combell public API endpoint.
 
 To learn more about the **Combell public API**, go to [https://api.combell.com/](https://api.combell.com/).
 
-[Combell](https://combell.com), your host on the internet.
-
-**Build status:** [![Build Status](https://travis-ci.org/combell/combell-api.svg?branch=master)](https://travis-ci.org/Combell/combell-api)
+**Build status:** [![Build Status](https://travis-ci.org/combell/combell-api.svg?branch=master)](https://travis-ci.org/combell/combell-api)
 
 ## Install
 

@@ -1,6 +1,6 @@
 {
     "name": "combell/combell-api",
-    "description": "Combell API for customers with direct activation",
+    "description": "Combell public API for customers with direct activation",
     "require": {
         "guzzlehttp/guzzle": "~6.0"
     },
