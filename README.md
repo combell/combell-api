@@ -16,7 +16,7 @@ composer require combell/combell-api
 
 ## Example
 
-The code example below creates a new hosting account called **identifier.be** on our hosting environment.
+The code example below registers a new domain name on your account.
 
 ```php
 <?php
@@ -33,16 +33,14 @@ $client = new \Combell\Client(
 );
 
 $body = new \stdClass();
-$body->servicepack_id = '0';
-$body->identifier = 'identifier.be';
-$body->password = 'password';
+$body->domain_name = 'domain-name-to-register.eu';
 
-// Create hosting account
-$response = $client->post('/v1/hostingaccounts', ['json' => $body]);
+// Register domain name
+$response = $client->post('/v1/domains/registrations', ['json' => $body]);
 
 // Dump response
 var_dump(
-    json_decode($response->getBody()->getContents())
+    $response->getHeader('Location')
 );
 ```
 
