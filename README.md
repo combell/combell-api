@@ -36,9 +36,9 @@ $body = new \stdClass();
 $body->domain_name = 'domain-name-to-register.eu';
 
 // Register domain name
-$response = $client->post('/v1/domains/registrations', ['json' => $body]);
+$response = $client->post('/v2/domains/registrations', ['json' => $body]);
 
-// Dump response
+// Dump location header with link to provisioning job
 var_dump(
     $response->getHeader('Location')
 );

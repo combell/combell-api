@@ -12,7 +12,7 @@ $client = new \Combell\Client(
 );
 
 // Get all servicepacks
-$response = $client->get('/v1/servicepacks');
+$response = $client->get('/v2/servicepacks');
 
 // Dump response
 var_dump(

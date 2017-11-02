@@ -12,7 +12,7 @@ $client = new \Combell\Client(
 );
 
 // Get detail of a hosting account
-$response = $client->get('/v1/hostingaccounts/identifier.be');
+$response = $client->get('/v2/linuxhostings/identifier.eu');
 
 // Dump response
 var_dump(

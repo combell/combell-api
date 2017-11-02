@@ -11,10 +11,10 @@ $client = new \Combell\Client(
     ]
 );
 
-$orderCode = 'COM-XXXXXXXX-XXX';
+$jobId = 'xxxx-yyyy';
 
 // Get detail of a domain registration order
-$response = $client->get(sprintf('/v1/domains/registrations/%s', $orderCode));
+$response = $client->get(sprintf('/v2/provisioningjobs/%s', $jobId));
 
 // Dump response
 var_dump(

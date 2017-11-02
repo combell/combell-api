@@ -12,14 +12,13 @@ $client = new \Combell\Client(
 );
 
 $body = new \stdClass();
-$body->servicepack_id = '0';
-$body->identifier = 'identifier.be';
-$body->password = 'password';
+$body->servicepack_id = 0;
+$body->identifier = 'identifier.eu';
 
 // Create hosting account
-$response = $client->post('/v1/hostingaccounts', ['json' => $body]);
+$response = $client->post('/v2/accounts', ['json' => $body]);
 
-// Dump response
+// Dump location header with link to provisioning job
 var_dump(
-    json_decode($response->getBody()->getContents())
+    $response->getHeader('Location')
 );
