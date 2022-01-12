@@ -9,10 +9,15 @@ To learn more about the **Combell public API**, go to [https://api.combell.com/]
 
 ## Install
 
-```
+```sh
 composer require combell/combell-api
 ```
 
+If you need support for PHP versions older than 7.4, you will need to use version 2.0:
+
+```sh
+composer require 'combell/combell-api:^2.0'
+```
 
 ## Example
 
