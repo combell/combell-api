@@ -11,9 +11,10 @@ $client = new \Combell\Client(
     ]
 );
 
-$body = new \stdClass();
-$body->servicepack_id = 0;
-$body->identifier = 'identifier.eu';
+$body = [
+    'servicepack_id' => 0,
+    'identifier' => 'identifier.eu'
+];
 
 // Create hosting account
 $response = $client->post('/v2/accounts', ['json' => $body]);

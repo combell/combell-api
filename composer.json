@@ -2,11 +2,13 @@
     "name": "combell/combell-api",
     "description": "Combell public API for customers with direct activation",
     "require": {
-        "guzzlehttp/guzzle": "~6.0"
+        "php": "^7.4",
+        "guzzlehttp/guzzle": "^6.5|^7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "5.4.*",
-        "satooshi/php-coveralls": "^1.0"
+        "php-coveralls/php-coveralls": "^2.5",
+        "phpunit/phpcov": "^8.2",
+        "phpunit/phpunit": "^9"
     },
     "autoload": {
         "psr-4": {
