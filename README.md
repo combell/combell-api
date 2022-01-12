@@ -32,8 +32,9 @@ $client = new \Combell\Client(
     ]
 );
 
-$body = new \stdClass();
-$body->domain_name = 'domain-name-to-register.eu';
+$body = [
+    'domain_name' => 'domain-name-to-register.eu'
+];
 
 // Register domain name
 $response = $client->post('/v2/domains/registrations', ['json' => $body]);

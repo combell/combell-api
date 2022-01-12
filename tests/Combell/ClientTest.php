@@ -1,4 +1,5 @@
 <?php
+
 namespace Combell\Tests;
 
 use Combell\Client;
@@ -11,10 +12,13 @@ class ClientTest extends TestCase
 {
     public function testGetDomains()
     {
-        $domainObject = new \stdClass();
-        $domainObject->domainName = 'test.be';
-        $domainObject->expirationDate = '2017-04-18T07:45:21.187Z';
-        $domainObject->willRenew = true;
+        $payload = [
+            [
+                'domainName' => 'test.be',
+                'expirationDate' => '2017-04-18T07:45:21.187Z',
+                'willRenew' => true,
+            ]
+        ];
 
         $mock = new MockHandler([
             new Response(
@@ -27,18 +31,19 @@ class ClientTest extends TestCase
                     'X-Paging-Size' => 1,
                     'X-Paging-TotalResults' => 1
                 ],
-                json_encode([$domainObject])
+                json_encode($payload)
             ),
         ]);
 
         $handler = HandlerStack::create($mock);
-        $this->client = new Client([
+
+        $client = new Client([
             'handler_stack' => $handler,
             'combell_api_key' => 'xyz',
             'combell_api_secret' => '123'
         ]);
 
-        $response = $this->client->get('/');
+        $response = $client->get('/');
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertEquals('application/json; charset=utf-8', $response->getHeaderLine('Content-Type'));
         $this->assertEquals(10, $response->getHeaderLine('X-Ratelimit-Limit'));
@@ -46,6 +51,6 @@ class ClientTest extends TestCase
         $this->assertEquals(0, $response->getHeaderLine('X-Paging-Skipped'));
         $this->assertEquals(1, $response->getHeaderLine('X-Paging-Size'));
         $this->assertEquals(1, $response->getHeaderLine('X-Paging-TotalResults'));
-        $this->assertEquals(json_encode([$domainObject]), $response->getBody()->getContents());
+        $this->assertEquals(json_encode($payload), $response->getBody()->getContents());
     }
 }
