@@ -48,3 +48,7 @@ var_dump(
 ```
 
 Go to the [examples](examples) folder to see more examples.
+
+## Combell.nl customers
+
+When you have a Dutch customer account (combell.nl), use `https://api.combell.nl` as endpoint.
