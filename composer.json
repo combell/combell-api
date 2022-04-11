@@ -2,7 +2,7 @@
     "name": "combell/combell-api",
     "description": "Combell public API for customers with direct activation",
     "require": {
-        "php": "^7.4",
+        "php": "^7.4|^8.0",
         "guzzlehttp/guzzle": "^6.5|^7.0"
     },
     "require-dev": {
