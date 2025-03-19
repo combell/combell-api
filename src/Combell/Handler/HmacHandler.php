@@ -30,6 +30,10 @@ class HmacHandler
             $body = base64_encode(md5($body, true));
         }
 
+        if ($path !== urldecode($path)) {
+            $path = urldecode($path);
+        }
+
         $valueToSign = $this->apiKey
             . strtolower($request->getMethod())
             . urlencode($path)
