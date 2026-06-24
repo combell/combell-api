@@ -1,9 +1,10 @@
 {
     "name": "combell/combell-api",
     "description": "Combell public API for customers with direct activation",
+    "license": "MIT",
     "require": {
         "php": "^7.4|^8.0",
-        "guzzlehttp/guzzle": "^6.5|^7.0"
+        "guzzlehttp/guzzle": "^7.12.1"
     },
     "require-dev": {
         "php-coveralls/php-coveralls": "^2.5",
